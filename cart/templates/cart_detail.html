@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Cart Detail
+{% endblock %}
+
+{% block content %}
+  <section class="cart_section quantity_cart">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <div class="delivery_area">
+              <h3>Delivery Address</h3>
+              <div class="text_area">
+                <div class="txt">2118 Thornridge Cir. Syracuse, Connecticut 35624</div>
+                <a href="javascript:;" class="edit">Edit</a>
+              </div>
+            </div>
+            <div class="listing_main">
+              <div class="left_l">
+                <div class="summary_main">
+                  <h3>Summary</h3>
+                  <div class="cart_list">
+                    {% for item in cart_data %}
+                      {% csrf_token %}
+                      <div class="item_cart" data-flavour="{{ item.flavour }}" data-weight="{{ item.weight }}" data-type="{{ item.variant_type }}" data-item-quantity="{{ item.quantity }}" data-item-name="{{ item.name }}" data-item-size="{{ item.size }}" data-item-price="{{ item.price }}" data-item-id="{{ item.variant_id }}" data-total-price="{{ total }}">
+                        <div class="left_cart">
+                          <div class="img_area">
+                            <img src="{% if item.image %}
+                                {{ item.image }}
+                              {% else %}
+                                {% static 'images/no_image.jpg' %}
+                              {% endif %}"
+                              alt="..."
+                              title="..."
+                              fetchpriority="low" />
+                          </div>
+                        </div>
+                        <div class="right_cart">
+                          <div class="title_area">
+                            <h4>{{ item.name }}</h4>
+                            <a href="{% url 'cart:remove_from_cart' item.variant_id %}" class="btn icon"><i class="fal fa-times"></i></a>
+                          </div>
+                          {% if item.variant_type == 'merchandise' %}
+                            <div class="size">
+                              Size: <span>{{ item.size }}</span>
+                            </div>
+                          {% else %}
+                            <div class="size">
+                              Flavour: <span>{{ item.flavour }} - {{ item.weight }}</span>
+                            </div>
+                          {% endif %}
+                          <div class="price">$ {{ item.price }}</div>
+                          <div class="quantity">
+                            <div class="left number-range-popup">
+                              <div class="number" id="number">
+                                <span class="minus"><i class="far fa-minus"></i></span>
+                                <input type="number" name="quantity" value="{{ item.quantity }}" />
+                                <span class="plus"><i class="far fa-plus"></i></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% empty %}
+                      <p style="text-align:center; color: white; font-size: 20px; font-weight: 400; line-height: 20px;">
+                        No Items in your Cart <a style="display: inline-block; color: #DE383A;" href="/merchandise/">Continue Shopping</a>...
+                      </p>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="card_plan">
+                  <h3>Summary</h3>
+                  <div class="plan_main">
+                    <div class="plan">Plan</div>
+                    <div class="title">Moderate</div>
+                    <div class="price">
+                      <span class="dollar">$</span>20<span>/week</span>
+                    </div>
+                    <ul class="plan_list">
+                      <li>
+                        <div class="icon_check">
+                          <i class="fal fa-check"></i>
+                        </div>Everything from Basic Plan.
+                      </li>
+                      <li>
+                        <div class="icon_check">
+                          <i class="fal fa-check"></i>
+                        </div>Describe your goals and Get diet Plan.
+                      </li>
+                      <li>
+                        <div class="icon_check">
+                          <i class="fal fa-check"></i>
+                        </div>Get workout tips and Diet combos.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="right_l">
+                <h3>Payment Detail</h3>
+                <div class="bill_main">
+                  <div class="inner_bill"></div>
+                  <div class="top total_price">
+                    <div class="left_b">
+                      <h6>Total Price</h6>
+                    </div>
+                    <div class="right_b">
+                      <div class="dollar">$ {{ total }}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn_area">
+                  <a href="javascript:;" class="btn-primary">Pay AUD {{ total }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
