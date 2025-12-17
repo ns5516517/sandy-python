@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Gym-Fitness
+{% endblock %}
+
+{% block content %}
+  <!-- Profile Infomation Section start -->
+  <section class="profile_info_section spacing_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <div class="left_info">
+              <div class="img_info">
+                {% if user.user_image %}
+                  <img src="{{ user.user_image.url }}" alt="{{ user.username }}" title="{{ user.username }}" fetchpriority="low" />
+                {% else %}
+                  <img src="{% static './images/profile.png' %}" alt="no-image" title="no-image" fetchpriority="low" />
+                {% endif %}
+              </div>
+            </div>
+            <div class="right_info">
+              {% if user %}
+                <div class="content_area">
+                  <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                  <div class="txt">{{ user.email }}</div>
+                </div>
+              {% else %}
+                <div class="content_area">
+                  <h3>No Name</h3>
+                  <div class="txt">NO Email</div>
+                </div>
+              {% endif %}
+              <div class="btn_area">
+                <a href="/edit_profile/" aria-label="..." class="btn-primary">Edit Profile</a>
+                <a href="/change_password/" aria-label="..." class="btn-primary">Change Password</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Profile Infomation Section End -->
+
+  <!-- Card Section Start -->
+  <section class="card_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="inner_card match_height_col">
+                  <div class="plan_main">
+                    <div class="plan_title">
+                      <div class="txt">Plan</div>
+                      <div class="basic">Basic</div>
+                    </div>
+                    <div class="btn_main">
+                      <div class="status">Active</div>
+                    </div>
+                  </div>
+                  <div class="expire_area">
+                    <div class="price_main">
+                      <span>$</span>10<span class="week">/ week</span>
+                    </div>
+                    <div class="expire">Expires on 11 june, 2022</div>
+                  </div>
+                  <div class="btn_area">
+                    <a href="javascript:;" class="btn-primary" aria-label="..." data-bs-toggle="modal" data-bs-target="#planModal">Upgrade</a>
+                    <a href="javascript:;" class="btn-primary deactive" aria-label="...">Deactivate</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="inner_card match_height_col mb-0">
+                  <div class="top">
+                    <div class="img_card">
+                      <img src="{% static './images/sim.png' %}" alt="..." title="..." fetchpriority="low" />
+                    </div>
+                    <div class="btn_remove">
+                      <a href="javascript:;" class="btn-primary" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</a>
+                    </div>
+                  </div>
+                  <div class="number">2564 2356 2654 8961</div>
+                  <div class="bottom">
+                    <div class="name">Sandy</div>
+                    <div class="expiers">Expires on 11,2022</div>
+                  </div>
+                </div>
+                <!-- Add Card start -->
+                {% comment %} <div class="inner_card card_add match_height_col mb-0">
+                  <div class="add_card">
+                    <a href="javascript:;" aria-label="...">
+                      <div class="img_add">
+                        <img src="{% static './images/icon.png' %}" alt="..." title="..." fetchpriority="low" />
+                      </div>
+                    </a>
+                    <div class="title">Add Card</div>
+                  </div>
+                </div> {% endcomment %}
+                <!-- Add Card end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Card Section End -->
+
+  <!-- Order Section Start -->
+  <section class="order_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <div class="top_area">
+              <div class="title">My Orders</div>
+              <div class="view_btn">
+                <a href="orders.php" aria-label="..." class="btn-primary">View All</a>
+              </div>
+            </div>
+            <div class="bottom_area">
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Order id</th>
+                      <th>Item</th>
+                      <th>Amount</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span>#5687</span>
+                      </td>
+                      <td>Men's Staple Tee</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status pending">Pending</div>
+                      </td>
+                      <td>
+                        <a href="javascript:;" aria-label="" class="btn-primary">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>#5687</span>
+                      </td>
+                      <td>Men's Staple Tee</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Delivered</div>
+                      </td>
+                      <td>
+                        <a href="javascript:;" aria-label="" class="btn-primary">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>#5687</span>
+                      </td>
+                      <td>Men's Staple Tee</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Active</div>
+                      </td>
+                      <td>
+                        <a href="javascript:;" aria-label="" class="btn-primary">View</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>#5687</span>
+                      </td>
+                      <td>Men's Staple Tee</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Delivered</div>
+                      </td>
+                      <td>
+                        <a href="javascript:;" aria-label="" class="btn-primary">View</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Order Section End -->
+
+  <!-- Transaction Section Start -->
+  <section class="order_section transaction_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <div class="top_area">
+              <div class="title">My Transactions</div>
+              <div class="view_btn">
+                <a href="transactions.php" aria-label="..." class="btn-primary">View All</a>
+              </div>
+            </div>
+            <div class="bottom_area">
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Transactions id</th>
+                      <th>Order id</th>
+                      <th>Amount</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mavidh256478987</td>
+                      <td>#5687</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Paid</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mavidh256478987</td>
+                      <td>#5687</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Paid</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mavidh256478987</td>
+                      <td>#5687</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status delivered">Paid</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mavidh256478987</td>
+                      <td>#5687</td>
+                      <td>$10.00</td>
+                      <td>22mar, 2022</td>
+                      <td>
+                        <div class="status pending">Failed</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Transaction Section End -->
+
+  <!-- Active Plan Start -->
+  <div class="modal fade planModal" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="inner_body">
+            <div class="id_txt">#5687</div>
+            <div class="txt">Activate on 12feb, 2022</div>
+            <div class="txt">Expire on 12mar, 2022</div>
+            <div class="txt">Payment method : paypal.me/Diannejane</div>
+            <div class="txt">Payment status : paid</div>
+            <div class="txt">Status : Active</div>
+            <div class="card_box">
+              <div class="basic_main">
+                <div class="left_bs">
+                  <div class="txt_p">Plan</div>
+                  <div class="txt_bs">Basic</div>
+                </div>
+                <div class="right_bs">
+                  <div class="tag">Active</div>
+                </div>
+              </div>
+              <div class="bottom_area">
+                <div class="price">
+                  <span class="dollar">$</span>10<span>/week</span>
+                </div>
+                <div class="expire_txt">Expires on 11 june, 2022</div>
+              </div>
+            </div>
+            <div class="payment_detail">
+              <h3>Payment Detail</h3>
+              <div class="inner_detail">
+                <div class="price_total">
+                  <div class="left_txt">Trial Subscription (1 Cycle/s)</div>
+                  <div class="right_txt">AUD100.00</div>
+                </div>
+                <div class="price_total">
+                  <div class="left_txt">Full Trial price:</div>
+                  <div class="right_txt">AUD100.00</div>
+                </div>
+                <div class="price_total">
+                  <div class="left_txt">Workout Diet App</div>
+                  <div class="right_txt">AUD20.00</div>
+                </div>
+                <div class="line"></div>
+                <div class="price_total total mb-0">
+                  <div class="left_txt">Price after trial period:</div>
+                  <div class="right_txt">AUD20.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Active Plan Modal End -->
+
+  <!-- Cancel Order Modal Start -->
+  <div class="modal fade planModal removeOrder" id="removeModal" tabindex="-1" aria-labelledby="removeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="inner_body">
+            <div class="id_txt">#5687</div>
+            <div class="txt">Order on 12feb, 2022</div>
+            <div class="txt">Payment method : paypal.me/Diannejane</div>
+            <div class="txt">Payment status : paid</div>
+            <div class="txt">Status : Pending</div>
+            <div class="listing_card">
+              <div class="inner_item">
+                <div class="img_area">
+                  <img src="{% static './images/card_img1.png' %}" alt="..." title="..." fetchpriority="low" />
+                </div>
+                <div class="content">
+                  <div class="title">Men's Staple Tee x1</div>
+                  <div class="prices">$15.00</div>
+                </div>
+              </div>
+              <div class="inner_item">
+                <div class="img_area">
+                  <img src="{% static './images/card_img2.png' %}" alt="..." title="..." fetchpriority="low" />
+                </div>
+                <div class="content">
+                  <div class="title">Men's Staple Tee x1</div>
+                  <div class="prices">$15.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="payment_detail">
+              <h3>Payment Detail</h3>
+              <div class="inner_detail">
+                <div class="price_total">
+                  <div class="left_txt">Men's Staple Tee x 1</div>
+                  <div class="right_txt">AUD15.00</div>
+                </div>
+                <div class="price_total">
+                  <div class="left_txt">Stencil Hood x 2</div>
+                  <div class="right_txt">AUD30.00</div>
+                </div>
+                <div class="line"></div>
+                <div class="price_total total mb-0">
+                  <div class="left_txt">Total Price</div>
+                  <div class="right_txt">AUD45.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="btn_area">
+              <a href="javascript:;" class="btn-primary">Cancel Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cancel Order Modal End -->
+{% endblock %}
