@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Sign Up
+{% endblock %}
+
+{% block content %}
+  <section class="login_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="title">
+                <h3>Sign Up</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+              <div class="form_area">
+                <div class="row">
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.first_name.id_for_label }}">{{ form.first_name.label_tag }}</label>
+                      {{ form.first_name }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.last_name.id_for_label }}">{{ form.last_name.label_tag }}</label>
+                      {{ form.last_name }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.email.id_for_label }}">{{ form.email.label_tag }}</label>
+                      {{ form.email }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.password.id_for_label }}">{{ form.password.label_tag }}</label>
+                      {{ form.password }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.contact_number.id_for_label }}">{{ form.contact_number.label_tag }}</label>
+                      {{ form.contact_number }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label for="" class="set_error">Gender</label>
+                      {% for radio in form.gender %}
+                        <div class="form-check">
+                          <label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                          {{ radio.tag }}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn_login">
+                <button type="submit" class="btn-primary">Sign Up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

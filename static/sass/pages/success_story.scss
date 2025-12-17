@@ -1,0 +1,371 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+
+
+.success_section{
+	padding-bottom: 90px;
+	.inner_area{
+		.image_main{
+			position: relative;
+			.img_area{
+				height: 592px;
+				img{
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+			.before{
+				padding: 20px;
+				font-size: 16px;
+				font-weight: 400;
+				color: variable.$white;
+				background-color: variable.$primary_color;
+				min-width: 160px;
+				text-align: center;
+				display: inline-block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			.after{
+				@extend .before;
+				left:unset;
+				right: 0;
+			}
+		}
+		.content_main{
+			padding: 40px;
+			background-color: variable.$secondary_color;
+			position: relative;
+			z-index: 1;
+			h3{
+				font-size: 32px;
+				font-weight: 600;
+				color: variable.$white;
+				margin-bottom: 25px;
+			}
+			.txt{
+				font-size: 16px;
+				font-weight: 400;
+				color: variable.$white;
+				margin-bottom: 40px;
+				line-height: 24px;
+			}
+			.name{
+				font-size: 22px;
+				font-weight: 500;
+				color: variable.$white;
+				margin-bottom: 8px;
+			}
+			.text{
+				font-size: 14px;
+				font-weight: 400;
+				color: variable.$grey3;
+			}
+		}
+	}
+	&.odd_section{
+		.inner_area {
+			.content_main{
+				margin-left: -60px;
+			}
+		}
+	}
+	&.even_section{
+		.inner_area{
+			.content_main{
+				margin-right: -60px;
+				text-align: end;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/* Above 1920 desktop */
+@media (min-width: 1920px){
+    
+}
+
+/* 1680 desktop */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* 1600 desktop */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Above 1400 and Below 1599 Desktop*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    .success_section{
+    	padding-bottom: 70px;
+    }
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    .success_section{
+    	padding-bottom: 60px;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.success_section{
+    	padding-bottom: 45px;
+    	.inner_area {
+    		.image_main {
+    			.img_area{
+    				height: 442px;
+    			}
+    			.before{
+    				padding: 15px;
+    				font-size: 15px;
+    				min-width: 120px;
+    			}
+    		}
+    		.content_main{
+    			padding: 30px;
+    			h3{
+    				font-size: 28px;
+    				margin-bottom: 20px;
+    			}
+    			.txt{
+    				font-size: 14px;
+    				line-height: 22px;
+    				margin-bottom: 30px;
+    			}
+    			.name{
+    				font-size: 20px;
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.success_section{
+    	padding-bottom: 40px;
+    	.inner_area {
+    		.image_main {
+    			.img_area{
+    				height: 388px;
+    			}
+    			.before{
+    				padding: 15px;
+    				font-size: 15px;
+    				min-width: 120px;
+    			}
+    		}
+    		.content_main{
+    			padding: 20px;
+    			h3{
+    				font-size: 25px;
+    				margin-bottom: 15px;
+    			}
+    			.txt{
+    				font-size: 14px;
+    				line-height: 22px;
+    				margin-bottom: 25px;
+    			}
+    			.name{
+    				font-size: 18px;
+    			}
+    		}
+    	}
+    	&.odd_section {
+    		.inner_area {
+    			.content_main{
+    				margin-left: 0;
+    			}
+    		}
+    	}
+    	&.even_section {
+    		.inner_area {
+    			.content_main{
+    				margin-right: 0;
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.success_section{
+    	padding-bottom: 30px;
+    	.inner_area {
+    		.image_main {
+    			.img_area{
+    				height: 336px;
+    			}
+    			.before{
+    				padding: 12px;
+    				font-size: 14px;
+    				min-width: 102px;
+    			}
+    		}
+    		.content_main{
+    			padding: 15px;
+    			h3{
+    				font-size: 22px;
+    				margin-bottom: 15px;
+    			}
+    			.txt{
+    				font-size: 14px;
+    				line-height: 22px;
+    				margin-bottom: 25px;
+    			}
+    			.name{
+    				font-size: 16px;
+    			}
+    		}
+    	}
+    	&.odd_section {
+    		.inner_area {
+    			.content_main{
+    				margin-left: 0;
+    			}
+    		}
+    	}
+    	&.even_section {
+    		.inner_area {
+    			.content_main{
+    				margin-right: 0;
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.success_section{
+    	padding-bottom: 25px;
+    	.inner_area {
+    		.image_main {
+    			margin-bottom: 20px;
+    			.img_area{
+    				height: 336px;
+    			}
+    			.before{
+    				padding: 12px;
+    				font-size: 14px;
+    				min-width: 102px;
+    			}
+    		}
+    		.content_main{
+    			padding: 15px;
+    			h3{
+    				font-size: 20px;
+    				margin-bottom: 12px;
+    			}
+    			.txt{
+    				font-size: 14px;
+    				line-height: 22px;
+    				margin-bottom: 25px;
+    			}
+    			.name{
+    				font-size: 16px;
+    			}
+    		}
+    	}
+    	&.odd_section {
+    		.inner_area {
+    			.content_main{
+    				margin-left: 0;
+    			}
+    		}
+    	}
+    	&.even_section {
+    		.inner_area {
+    			.content_main{
+    				margin-right: 0;
+    				text-align: left;
+    			}
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.success_section{
+    	padding-bottom: 25px;
+    	.inner_area {
+    		.image_main {
+    			margin-bottom: 20px;
+    			.img_area{
+    				height: 336px;
+    			}
+    			.before{
+    				padding: 12px;
+    				font-size: 14px;
+    				min-width: 102px;
+    			}
+    		}
+    		.content_main{
+    			padding: 15px;
+    			h3{
+    				font-size: 20px;
+    				margin-bottom: 12px;
+    			}
+    			.txt{
+    				font-size: 14px;
+    				line-height: 22px;
+    				margin-bottom: 25px;
+    			}
+    			.name{
+    				font-size: 16px;
+    			}
+    		}
+    	}
+    	&.odd_section {
+    		.inner_area {
+    			.content_main{
+    				margin-left: 0;
+    			}
+    		}
+    	}
+    	&.even_section {
+    		.inner_area {
+    			.content_main{
+    				margin-right: 0;
+    				text-align: left;
+    			}
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}
+
+
+
+
+/* Add CSS styles for Portrait orientation */
+@media screen and (orientation: portrait) {
+    
+}
+
+/* Add CSS styles for Landscape orientation */
+@media screen and (orientation: landscape) {
+    
+}

@@ -1,0 +1,286 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+@use "sass:color";
+
+
+body{
+    font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: inherit;
+	background-color: #111111;
+}
+
+.btn-primary{
+	display: inline-block;
+	background-color: variable.$primary_color;
+	color: variable.$white;
+	font-weight: 400;
+	font-size: 14px;
+	padding: 15px 20px;
+	border-radius: 0px;
+	min-width: 130px;
+	text-align: center;
+	border: none;
+	&:hover, &:focus, &:active{
+		color: variable.$white;
+		border-radius: 0px;
+		background-color: color.scale(variable.$primary_color, $lightness: 10%);
+	}
+}
+
+h1,h2,h3,h4,h5,h6{ 
+	font-weight: 700;
+}
+
+.no_event{
+    pointer-events: none;
+}
+
+.scroll_off{
+    overflow: hidden;
+    @include mixins.ioshidden();
+}
+
+label{
+	&.error{
+		display: block;
+		color: #f00 !important;
+		font-weight: 500 !important;
+		font-size: 14px !important;
+	}
+}
+.text-success{
+	color: #25d366 !important;
+}
+
+.form-group{
+	margin-bottom: 20px;
+	label{
+		&.set_error{
+			font-size: 14px;
+			font-weight: 400;
+			color: variable.$white;
+			margin-bottom: 8px;
+			display: block;
+		}
+	}
+	.form-control{
+		border:none;
+		font-size: 16px;
+		font-weight: 400;
+		color: variable.$white;
+		border-bottom: 1px solid variable.$border_color;
+		background-color: transparent;
+		padding: 0;
+		padding-bottom: 8px;
+		&::placeholder{
+			font-size: 16px;
+			font-weight: 400;
+			color: variable.$border_color;
+		}
+	}
+}
+
+
+.callout{
+	border-radius: .25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    background-color: #fff;
+    border-left: 5px solid #e9ecef;
+    margin-bottom: 1rem;
+    padding: 13px;
+	&.callout-success{
+		border-left-color: #1e7e34;
+	    background-color: #28a745;
+	    color: #fff;
+	}
+    &.callout-danger{
+        border-left-color: #bd2130;
+        background-color: #d72d3e;
+        color: #fff;
+    }
+}
+
+.alert{
+	&.alert-success{
+		border-left-color: #1e7e34;
+	    background-color: #28a745;
+	    color: #fff;
+	}
+    &.alert-danger{
+        border-left-color: #bd2130;
+        background-color: #d72d3e;
+        color: #fff;
+    }
+}
+
+.popover{
+	max-width: 360px;
+	padding: 20px;
+	border: 1px solid #e8e8eb;
+	box-shadow: 0px 12px 20px 0px rgba(0,0,50,.12);
+	.popover-body{
+		padding: 0;
+		p{
+			font-weight: 600;
+			font-size: 14px;
+			color: variable.$black;
+			padding-bottom: 10px;
+			a{
+				color: variable.$black;
+				display: inline-block;
+			}
+		}
+		a{
+			color: variable.$black;
+			font-weight: 600;
+			display: block;
+		}
+	}
+}
+
+.pagination_area{
+	text-align: center;
+	display: table;
+	margin: 0 auto;
+	@include mixins.clearfix();
+	.list-inline{
+		li{
+			a{
+				display: block;
+				font-size: 16px;
+				color: variable.$black;
+				background-color: variable.$primary_color;
+				color: variable.$white;
+				padding: 0px 0px;
+				width: 30px;
+				height: 30px;
+				margin: 0px 1.2px;
+				line-height: 30px;
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				&:hover{
+					background-color: color.scale(variable.$primary_color,$lightness: 10%);
+				}
+			}
+			&.page_np{
+				a{
+					width: auto;
+					padding: 0px 8px;
+				}
+			}
+			&.disable{
+				cursor: no-drop;
+				a{
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}
+
+.custom_pagination{
+	padding-top: 15px;
+	overflow: auto;
+	.pagination{
+	    white-space: nowrap;
+	    //justify-content: flex-end;
+	    .paginate_button{
+	        &.page-item{
+	            a{
+	                display: block;
+	                position: relative;
+	                padding: .5rem .75rem;
+	                margin-left: -1px;
+	                line-height: 1.25;
+	                color: variable.$black;
+	                background-color: #fff;
+	                border: 1px solid #dee2e6;
+	                &.active{
+	                    color: #fff;
+	                    background-color: variable.$primary_color;
+	                    border-color: variable.$primary_color;
+	                }
+	            }
+	        }
+	    }
+	}
+
+}
+
+#pb_scroll::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 0px rgba(0,0,0,0);
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0);
+	background-color: none;
+}
+
+#pb_scroll::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: none;
+}
+
+#pb_scroll::-webkit-scrollbar-thumb
+{
+	background-color: variable.$black;
+	border: 1px solid variable.$black;
+}
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {
+}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.btn-primary{
+	    padding: 12px 15px;
+	    min-width: 115px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.btn-primary{
+	    padding: 12px 15px;
+	    min-width: 115px;
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.btn-primary{
+	    padding: 12px 15px;
+	    min-width: 115px;
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+}

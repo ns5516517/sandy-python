@@ -1,0 +1,361 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+
+.header_section{
+	background-color: variable.$secondary_color;
+	padding:15px 0;
+	box-shadow: 0px 4px 20px 0px #00000033;
+	border-bottom: 1px solid variable.$grey2;
+	.inner_area{
+		@include mixins.clearfix();
+		display: flex;
+		align-items: center;
+		.left_area{
+			float: left;
+			width: 100px;
+			.img_logo{
+				height: 100px;
+				img{
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		.right_area{
+			float: right;
+			width:calc(100% - 100px);
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			.menu_list{
+				li{
+					display: inline-block;
+					margin-right: 30px;
+					&:last-child{
+						margin-right: 0;
+					}
+					&:hover,&.active{
+						.txt{
+							color: variable.$primary_color;
+						}
+					}
+					.txt{
+						font-size: 16px;
+					    font-weight: 400;
+					    color: white;
+					}
+				}
+			}
+			.cart_icon{
+				margin-left: 30px;
+				position: relative;
+				i{
+					font-size: 18px;
+					color: variable.$white;
+				}
+				.num{
+					height: 15px;
+					width: 15px;
+					border-radius: 50%;
+					background-color: variable.$primary_color;
+					font-size: 12px;
+					color: variable.$white;
+					font-weight: 400;
+					position: absolute;
+					top:0;
+					right:0;
+					text-align:center;
+					align-content: center;
+				    margin-right: -5px;
+    				margin-top: -6px;
+				}
+			}
+			.main_wrapper{
+				.img_wrapper{
+					width: 90px;
+					height: 90px;
+					overflow: hidden;
+					margin-left: 30px;
+					img{
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+			.btn_area{
+				margin-left:30px;
+				.btn-primary{}
+			}
+			.menu_btn{
+				margin-left: 30px;
+				i{
+					font-size: 25px;
+					color: variable.$white;
+					width: 25px;
+				}
+			}
+		}
+	}
+	.open_menu{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left:0;
+		right:0;
+		background-color: variable.$black;
+		opacity: 0;
+		height: 0;
+		z-index: -1;
+		padding:25px 15px;
+		&.show{
+			height: 100%;
+			width: 100%;
+			z-index: 999;
+			opacity: 1;
+		}
+		.tab_links{
+			li{
+				margin-bottom: 20px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				&:hover,&.active{
+					.txt{
+						color: variable.$primary_color;
+						&::before{
+							opacity: 1;
+							@include mixins.scale(1)
+						}
+					}
+				}
+				.txt{
+					font-size: 16px;
+				    font-weight: 400;
+				    color: variable.$white;
+				    display: inline-block;
+				    @include mixins.transition(all .5s ease-in-out);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/* Above 1920 desktop */
+@media (min-width: 1920px){
+    
+}
+
+/* 1680 desktop */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* 1600 desktop */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Above 1400 and Below 1599 Desktop*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.header_section {
+		.inner_area {
+			.right_area {
+				.menu_list {
+					li{
+						margin-right: 20px;
+						.txt{
+							font-size: 15px;
+						}
+					}
+				}
+				.cart_icon{
+					margin-left: 20px;
+				}
+				.btn_area{
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.header_section {
+		.inner_area {
+			.left_area{
+				width: 75px;
+				.img_logo{
+					height: 75px;
+				}
+			}
+			.right_area {
+				width: calc(100% - 75px);
+				.menu_list {
+					display: none;
+				}
+				.cart_icon{
+					margin-left: 0px;
+				}
+				.btn_area{
+					margin-left: 30px;
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.header_section {
+		padding: 12px 0;
+		.inner_area {
+			.left_area{
+				width: 60px;
+				.img_logo{
+					height: 60px;
+				}
+			}
+			.right_area {
+				width: calc(100% - 60px);
+				.menu_list {
+					display: none;
+				}
+				.cart_icon{
+					margin-left: 0px;
+				}
+				.btn_area{
+					margin-left: 20px;
+				}
+				.menu_btn{
+					margin-left: 15px;
+					i{
+						font-size: 20px;
+						width: 20px;
+					}
+				}
+			}
+		}
+		.open_menu {
+			.tab_links {
+				li {
+					.txt{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.header_section {
+		padding: 12px 0;
+		.inner_area {
+			.left_area{
+				width: 60px;
+				.img_logo{
+					height: 60px;
+				}
+			}
+			.right_area {
+				width: calc(100% - 60px);
+				.menu_list {
+					display: none;
+				}
+				.cart_icon{
+					margin-left: 0px;
+				}
+				.btn_area{
+					margin-left: 15px;
+				}
+				.menu_btn{
+					margin-left: 15px;
+					i{
+						font-size: 20px;
+						width: 20px;
+					}
+				}
+			}
+		}
+		.open_menu {
+			.tab_links {
+				li {
+					.txt{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.header_section {
+		padding: 12px 0;
+		.inner_area {
+			.left_area{
+				width: 60px;
+				.img_logo{
+					height: 60px;
+				}
+			}
+			.right_area {
+				width: calc(100% - 60px);
+				.menu_list {
+					display: none;
+				}
+				.cart_icon{
+					margin-left: 0px;
+				}
+				.btn_area{
+					margin-left: 15px;
+				}
+				.menu_btn{
+					margin-left: 15px;
+					i{
+						font-size: 20px;
+						width: 20px;
+					}
+				}
+			}
+		}
+		.open_menu {
+			.tab_links {
+				li {
+					.txt{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}

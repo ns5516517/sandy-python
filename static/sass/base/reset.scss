@@ -1,0 +1,210 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	margin: 0;
+	padding: 0;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+a{
+	text-decoration: none;
+	outline: none;
+	@include mixins.transition(all .3s ease);
+	&:hover{
+		text-decoration: none;
+		outline: none;
+	}
+	&:focus{
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+.btn{
+	border: 0;
+	box-shadow: none;
+	text-decoration: none;
+	outline: none;
+	border-radius: 0;
+	&:hover{
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+		border: 0;
+		border-radius: 0;
+		background-color: variable.$primary_color;
+	}
+	&:focus{
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+		border: 0;
+		border-radius: 0;
+		background-color: variable.$primary_color;
+	}
+	&:active{
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+		border: 0;
+		border-radius: 0;
+		background-color: variable.$primary_color;
+		&:focus{
+			box-shadow: none;
+		}
+	}
+	&:visited{
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+		border: 0;
+		border-radius: 0;
+		background-color: variable.$primary_color;
+	}
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	li{
+		list-style: none;
+		a{}
+	}
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+
+.list-inline{
+	margin: 0;
+	padding: 0;
+	@include mixins.clearfix();
+	li{
+		float: left;
+		a{
+			display: inline-block;
+		}
+	}
+}
+
+.form-control{
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	text-decoration: none;
+	outline: none;
+	&:hover{
+		border-radius: 0;
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+	}
+	&:focus{
+		border-radius: 0;
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+	}
+	&:active{
+		border-radius: 0;
+		box-shadow: none;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+
+
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px) {
+	.container {
+		max-width: 1330px;
+	}
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px) {
+	.container {
+		max-width: 1330px;
+	}
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px) {
+	.container {
+		max-width: 1330px;
+	}
+}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px) {
+	.container {
+		max-width: 1330px;
+	}
+}
+
+@media (min-width: 1280px) and (max-width: 1399px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.container{
+		max-width: 100%;
+	}
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.container{
+		max-width: 100%;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 544px) and (max-width: 767px) {
+	.container{
+		min-width: 100%;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 543px) {
+	.container{
+		max-width: 100%;
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.container{
+		max-width: 100%;
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}

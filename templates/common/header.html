@@ -1,0 +1,79 @@
+{% load static %}
+<section class="header_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="inner_area">
+          <div class="left_area">
+            <a href="/">
+              <div class="img_logo">
+                <img src="{% static './images/logo.png' %}" alt="..." title="..." />
+              </div>
+            </a>
+          </div>
+          <div class="right_area">
+            <ul class="menu_list">
+              <li>
+                <a href="/training_plan/" aria-label="..." class="txt">1-1 Training Plans</a>
+              </li>
+              <li>
+                <a href="/merchandise/" aria-label="..." class="txt">Merchandise</a>
+              </li>
+              <li>
+                <a href="/supplement/" aria-label="..." class="txt">Supplement</a>
+              </li>
+              <li>
+                <a href="/membership_plan/" aria-label="..." class="txt">Membership Plans</a>
+              </li>
+            </ul>
+            <a href="/cart/" class="cart_icon">
+              <i class="far fa-shopping-cart"></i>
+              <div class="num">1</div>
+            </a>
+            {% if user.is_authenticated %}
+              <div class="main_wrapper dropdown">
+                {% if user.user_image %}
+                  <div class="img_wrapper dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ user.user_image.url }}" alt="{{ user.username }}" title="{{ user.username }}" fetchpriority="low" />
+                  </div>
+                {% else %}
+                  <div class="img_wrapper dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{% static 'images/no_image.jpg' %}" alt="no_image" title="no_image" fetchpriority="low" />
+                  </div>
+                {% endif %}
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            {% else %}
+              <div class="btn_area">
+                <a href="/user/login/" aria-label="..." class="btn-primary">Login</a>
+              </div>
+            {% endif %}
+            <div class="menu_btn d-lg-none d-md-block">
+              <i class="far fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="open_menu">
+    <ul class="tab_links">
+      <li>
+        <a href="/training_plan/" aria-label="..." class="txt">1-1 Training Plans</a>
+      </li>
+      <li>
+        <a href="/merchandise/" aria-label="..." class="txt">Merchandise</a>
+      </li>
+      <li>
+        <a href="/supplement/" aria-label="..." class="txt">Supplement</a>
+      </li>
+      <li>
+        <a href="/membership_plan/" aria-label="..." class="txt">Membership Plans</a>
+      </li>
+    </ul>
+  </div>
+</section>

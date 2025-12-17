@@ -1,0 +1,246 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+
+.sucess_section{
+	padding: 90px 0;
+	.inner_area{
+		width: 530px;
+		border-radius: 20px;
+		background-color: variable.$secondary_color;
+		padding: 35px;
+		max-width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+		.icon_area{
+			height: 75px;
+			width: 75px;
+			border-radius: 50%;
+			background-color: variable.$border_color2;
+			text-align: center;
+			align-content: center;
+			margin: 0 auto;
+			margin-bottom: 15px;
+			border: 1px solid variable.$border_color;
+			i{
+				font-size: 35px;
+				color: variable.$white;
+			}
+		}
+		h3{
+			font-size: 32px;
+			font-weight: 600;
+			color: variable.$white;
+			margin-bottom: 15px;
+		}
+		p{
+			font-size: 16px;
+			font-weight: 400;
+			color: variable.$white;
+			margin-bottom: 30px;
+			line-height: 23px;
+		}
+		.btn_area{
+			.btn-primary{
+				background-color: variable.$white;
+				color: variable.$black;
+				font-weight: 500;
+				border-radius: 5px;
+				&:hover,&.active,&:focus{
+					background-color: variable.$primary_color;
+					color: variable.$white;
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Above 1920 desktop */
+@media (min-width: 1920px){
+    
+}
+
+/* 1680 desktop */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* 1600 desktop */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Above 1400 and Below 1599 Desktop*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    .sucess_section{
+    	padding: 70px 0;
+    }
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    .sucess_section{
+    	padding: 60px 0;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sucess_section{
+    	padding: 45px 0;
+    	.inner_area{
+    		width: 460px;
+    		padding: 30px;
+    		.icon_area{
+    			height: 70px;
+    			width: 70px;
+    			i{
+    				font-size: 30px;
+    			}
+    		}
+    		h3{
+    			font-size: 30px;
+    		}
+    		p{
+    			font-size: 15px;
+    		}
+    	}
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.sucess_section{
+    	padding: 40px 0;
+    	.inner_area{
+    		width: 430px;
+    		padding: 25px;
+    		.icon_area{
+    			height: 70px;
+    			width: 70px;
+    			i{
+    				font-size: 30px;
+    			}
+    		}
+    		h3{
+    			font-size: 28px;
+    		}
+    		p{
+    			font-size: 14px;
+    			line-height: 21px;
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.sucess_section{
+    	padding: 35px 0;
+    	.inner_area{
+    		width: 422px;
+    		padding: 25px;
+    		.icon_area{
+    			height: 60px;
+    			width: 60px;
+    			margin-bottom: 12px;
+    			i{
+    				font-size: 25px;
+    			}
+    		}
+    		h3{
+    			font-size: 25px;
+    			margin-bottom: 12px;
+    		}
+    		p{
+    			font-size: 14px;
+    			line-height: 21px;
+    			margin-bottom: 25px;
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.sucess_section{
+    	padding: 30px 0;
+    	.inner_area{
+    		width: 100%;
+    		padding:25px 15px;
+    		border-radius: 15px;
+    		.icon_area{
+    			height: 60px;
+    			width: 60px;
+    			margin-bottom: 12px;
+    			i{
+    				font-size: 25px;
+    			}
+    		}
+    		h3{
+    			font-size: 22px;
+    			margin-bottom: 12px;
+    		}
+    		p{
+    			font-size: 14px;
+    			line-height: 21px;
+    			margin-bottom: 25px;
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.sucess_section{
+    	padding: 30px 0;
+    	.inner_area{
+    		width: 100%;
+    		padding:25px 15px;
+    		border-radius: 15px;
+    		.icon_area{
+    			height: 60px;
+    			width: 60px;
+    			margin-bottom: 12px;
+    			i{
+    				font-size: 25px;
+    			}
+    		}
+    		h3{
+    			font-size: 22px;
+    			margin-bottom: 12px;
+    		}
+    		p{
+    			font-size: 14px;
+    			line-height: 21px;
+    			margin-bottom: 25px;
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}
+
+
+
+
+/* Add CSS styles for Portrait orientation */
+@media screen and (orientation: portrait) {
+    
+}
+
+/* Add CSS styles for Landscape orientation */
+@media screen and (orientation: landscape) {
+    
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+  <section class="login_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="inner_area">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="title">
+                <h3>Login</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+              <div class="form_area">
+                <div class="row">
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.email.id_for_label }}">{{ form.email.label_tag }}</label>
+                      {{ form.email }}
+                    </div>
+                  </div>
+                  <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="set_error" for="{{ form.password.id_for_label }}">{{ form.password.label_tag }}</label>
+                      {{ form.password }}
+                    </div>
+                  </div>
+                </div>
+                <div class="forgot_btn">
+                  <a href="/user/forgot_password/" class="forgot" aria-label="...">Forgot Password?</a>
+                </div>
+              </div>
+              <div class="btn_login">
+                <button type="submit" class="btn-primary">Login</button>
+              </div>
+              <div class="account_main">
+                <p>
+                  Don’t have an account? <a href="/user/sign_up/" aria-label="..." class="sign">Sign Up</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

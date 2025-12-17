@@ -1,0 +1,1256 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+
+.modal{
+	.modal-dialog{
+		width: 875px;
+		max-width: 100%;
+	    align-content: center;
+    	height: 100%;
+		.modal-content{
+			background-color: variable.$secondary_color;
+			.modal-header{
+				padding: 15px;
+				border: 0;
+				position: relative;
+				.btn-close{
+					background-image: unset;
+					position: relative;
+					opacity: 1;
+					display: contents;
+					&::before{
+						content: "\f00d";
+						font-family: "Font Awesome 5 Pro";
+						font-size: 20px;
+						color: variable.$white;
+						position: absolute;
+						top:0;
+						right: 0;
+						margin-top: 10px;
+						margin-right: 15px;
+					}
+				}
+			}
+			.modal-body{
+				padding: 0;
+				.inner_body{
+					padding: 50px;
+					padding-top: 30px;
+					@include mixins.clearfix();
+					.left_area{
+						float: left;
+						width: 400px;
+						.img_modal{
+							height: 358px;
+							img{
+								height: 100%;
+								width: 100%;
+								object-fit: cover;
+							}
+						}
+					}
+					.right_area{
+						float: right;
+						width: calc(100% - 400px);
+						padding-left: 30px;
+						h3{
+							font-size: 30px;
+							font-weight: 400;
+							color: variable.$white;
+							margin-bottom: 15px;
+						}
+						.price{
+							font-size: 36px;
+							font-weight: 500;
+							color: variable.$primary_color;
+							margin-bottom: 24px;
+						}
+						.size_main{
+							margin-bottom: 40px;
+							.size{
+								font-size: 24px;
+								font-weight: 400;
+								color: variable.$white;
+								margin-bottom: 20px;
+								span{
+									font-size: 22px;
+									color: variable.$primary_color;
+								}
+							}
+							.size_list{
+								li{
+									display: inline-block;
+									height: 40px;
+									width: 57px;
+									background-color: variable.$white;
+									font-size: 16px;
+									font-weight: 400;
+									color: variable.$black;
+									margin-right: 10px;
+									text-align: center;
+									align-content: center;
+									@include mixins.transition(all .5s ease-in-out);
+									&:last-child{
+										margin-right: 0;
+									}
+									&:hover,&.active{
+										color: variable.$white;
+										background-color: variable.$primary_color;
+									}
+								}
+							}
+						}
+						.bottom_area{
+							display: flex;
+							align-items: end;
+							justify-content: space-between;
+							.quantity_main{
+								.text{
+									font-size: 24px;
+									font-weight: 400;
+									color: variable.$white;
+									margin-bottom: 20px;
+								}
+								.quantity{
+									.left{
+										.number{
+											width: 95px;
+										    display: flex;
+										    justify-content: center;
+										    align-items: center;
+										    height: 35px;
+										    background-color: variable.$white;
+											.minus{
+												padding: 8px;
+												border-right: 1px solid variable.$border_color3;
+												i{
+													font-size: 14px;
+													color: variable.$black;
+												}
+											}
+											input{
+												padding: 5px;
+											    text-align: center;
+											    width: calc(100% - 60px);
+											    font-size: 14px;
+											    font-weight: 400;
+											    border: none;
+											    display: inline-block;
+											    vertical-align: middle;
+											    color: variable.$primary_color;
+											}
+											.plus{
+												padding: 8px;
+												border-left: 1px solid variable.$border_color3;
+												i{
+													font-size: 14px;
+													color: variable.$black;
+												}
+											}
+										}
+									}
+								}
+							}
+							.btn_card{
+								.btn-primary{
+									min-width: 190px;
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.planModal{
+		.modal-dialog{
+			width: 525px;
+			.modal-content{
+				border: 1px solid variable.$border_color;
+				background-color: variable.$black;
+				.modal-header{
+					.btn-close{}
+				}
+				.modal-body{
+					.inner_body{
+						padding: 30px;
+						padding-top: 0;
+						.id_txt{
+							font-size: 24px;
+							font-weight: 400;
+							color: variable.$primary_color;
+							margin-bottom: 20px;
+						}
+						.txt{
+							font-size: 14px;
+							font-weight: 400;
+							color: variable.$white;
+							margin-bottom: 15px;
+						}
+						.card_box{
+							background-color: variable.$secondary_color;
+							padding: 30px;
+							margin-bottom: 30px;
+							.basic_main{
+								display: flex;
+								justify-content: space-between;
+								margin-bottom: 20px;
+								.left_bs{
+									display: inline-block;
+									.txt_p{
+										font-size: 16px;
+										font-weight: 400;
+										color: variable.$white;
+										margin-bottom: 5px;
+									}
+									.txt_bs{
+										font-size: 24px;
+										font-weight: 400;
+										color: variable.$white;
+									}
+								}
+								.right_bs{
+									.tag{
+										font-size: 16px;
+										font-weight: 400;
+										color: variable.$black;
+										padding: 5px 20px;
+										border-radius: 5px;
+										background-color: variable.$yellow_color;
+										min-width: 128px;
+										text-align: center;
+										display: inline-block;
+									}
+								}
+							}
+							.bottom_area{
+								display: flex;
+								justify-content: space-between;
+								align-items: end;
+								.price{
+									font-size: 40px;
+									font-weight: 500;
+									color: variable.$white;
+									span{
+										font-size: 14px;
+										font-weight: 400;
+										color: variable.$white;
+										&.dollar{
+											vertical-align: top;
+											position: relative;
+											top: 6px;
+										}
+									}
+								}
+								.expire_txt{
+									font-size: 16px;
+									font-weight: 400;
+									color: variable.$white;
+								}
+							}
+						}
+						.payment_detail{
+							padding: 30px;
+							background-color: variable.$secondary_color;
+							h3{
+								font-size: 24px;
+								font-weight: 400;
+								color: variable.$white;
+								margin-bottom: 30px;
+							}
+							.inner_detail{
+								.price_total{
+									display: flex;
+									justify-content: space-between;
+									margin-bottom: 25px;
+									.left_txt{
+										font-size: 14px;
+										font-weight: 400;
+										color: variable.$white;
+									}
+									.right_txt{
+										@extend .left_txt;
+									}
+									&.total{
+										.left_txt{
+											font-size: 14px;
+										}
+										.right_txt{
+											font-size: 16px;
+										}
+									}
+								}
+								.line{
+									height: 1px;
+									width: 100%;
+									margin-bottom: 25px;
+									background-color: variable.$border_color;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.removeOrder{
+			.modal-dialog {
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							.listing_card{
+								margin-bottom: 30px;
+								.inner_item{
+									background-color: variable.$secondary_color;
+									padding: 20px;
+									display: flex;
+									margin-bottom: 15px;
+									&:last-child{
+										margin-bottom: 0;
+									}
+									.img_area{
+										height: 83px;
+										width: 83px;
+										flex-shrink: 0;
+										img{
+											height: 100%;
+											width: 100%;
+											object-fit: cover;
+										}
+									}
+									.content{
+										padding-left: 20px;
+										.title{
+											font-size: 18px;
+											font-weight: 400;
+											color: variable.$white;
+											margin-bottom: 6px;
+										}
+										.prices{
+											font-size: 24px;
+											font-weight: 600;
+											color: variable.$white;
+										}
+									}
+								}
+							}
+							.btn_area{
+								margin-top: 30px;
+								.btn-primary{
+									width: 100%;
+								}
+							}
+						}
+					}
+				} 
+			}
+		}
+	}
+}
+
+
+
+
+/* Above 1920 desktop */
+@media (min-width: 1920px){
+    
+}
+
+/* 1680 desktop */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* 1600 desktop */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Above 1400 and Below 1599 Desktop*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.modal {
+		.modal-dialog {
+		    width: 816px;
+			.modal-content {
+				.modal-body {
+					.inner_body{
+						padding: 35px;
+						.right_area{
+							h3{
+								font-size: 25px;
+							}
+							.price{
+								font-size: 30px;
+								margin-bottom: 20px;
+							}
+							.size_main {
+								margin-bottom: 30px;
+								.size{
+									font-size: 20px;
+									margin-bottom: 15px;
+									span{
+										font-size: 18px;
+									}
+								}
+								.size_list{
+									li{
+										height: 35px;
+									    width: 45px;
+									    font-size: 14px;
+									    margin-right: 8px;
+									}
+								}
+							}
+							.bottom_area {
+								.quantity_main {
+									.text{
+										font-size: 20px;
+										margin-bottom: 15px;
+									}
+								}
+								.btn_card {
+									.btn-primary{
+										font-size: 14px;
+									    min-width: 160px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.planModal {
+			.modal-dialog {
+				width: 495px;
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							padding: 25px;
+							padding-top: 0;
+							.id_txt{
+								font-size: 20px;
+								margin-bottom: 15px;
+							}
+							.card_box{
+								padding: 25px;
+								margin-bottom: 25px;
+								.basic_main {
+									margin-bottom: 15px;
+									.left_bs {
+										.txt_p{
+											font-size: 15px;
+										}
+										.txt_bs{
+											font-size: 22px;
+										}
+									}
+									.right_bs{
+										.tag{
+											font-size: 14px;
+											min-width: 112px;
+										}
+									}
+								}
+								.bottom_area {
+									.price{
+										font-size: 35px;
+									}
+									.expire_txt{
+										font-size: 14px;
+									}
+								}
+							}
+							.payment_detail{
+								padding: 25px;
+								h3{
+									font-size: 20px;
+									margin-bottom: 25px;
+								}
+								.inner_detail{
+									.price_total{
+										margin-bottom: 20px;
+										&.total{
+											.left_txt{
+												font-size: 14px;
+											}
+											.right_txt{
+												font-size: 16px;
+											}
+										}
+									}
+									.line{
+										margin-bottom: 20px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.removeOrder {
+				.modal-dialog {
+					.modal-content {
+						.modal-body {
+							.inner_body {
+								.listing_card{
+									margin-bottom: 25px;
+								}
+								.btn_area{
+									margin-top: 25px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.modal {
+		.modal-dialog {
+		    width: 680px;
+			.modal-content {
+				.modal-body {
+					.inner_body{
+						padding: 25px;
+						.left_area{
+							width: 300px;
+							.img_modal{
+								height: 296px;
+							}
+						}
+						.right_area{
+							width: calc(100% - 300px);
+							padding-left: 25px;
+							h3{
+								font-size: 25px;
+							}
+							.price{
+								font-size: 30px;
+								margin-bottom: 20px;
+							}
+							.size_main {
+								margin-bottom: 30px;
+								.size{
+									font-size: 20px;
+									margin-bottom: 15px;
+									span{
+										font-size: 18px;
+									}
+								}
+								.size_list{
+									li{
+										height: 35px;
+									    width: 45px;
+									    font-size: 14px;
+									    margin-right: 8px;
+									}
+								}
+							}
+							.bottom_area {
+								.quantity_main {
+									.text{
+										font-size: 20px;
+										margin-bottom: 15px;
+									}
+								}
+								.btn_card {
+									.btn-primary{
+										font-size: 14px;
+									    min-width: 160px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.planModal {
+			.modal-dialog {
+				width: 495px;
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							padding: 25px;
+							padding-top: 0;
+							.id_txt{
+								font-size: 20px;
+								margin-bottom: 15px;
+							}
+							.card_box{
+								padding: 25px;
+								margin-bottom: 25px;
+								.basic_main {
+									margin-bottom: 15px;
+									.left_bs {
+										.txt_p{
+											font-size: 15px;
+										}
+										.txt_bs{
+											font-size: 22px;
+										}
+									}
+									.right_bs{
+										.tag{
+											font-size: 14px;
+											min-width: 112px;
+										}
+									}
+								}
+								.bottom_area {
+									.price{
+										font-size: 35px;
+									}
+									.expire_txt{
+										font-size: 14px;
+									}
+								}
+							}
+							.payment_detail{
+								padding: 25px;
+								h3{
+									font-size: 20px;
+									margin-bottom: 25px;
+								}
+								.inner_detail{
+									.price_total{
+										margin-bottom: 20px;
+										&.total{
+											.left_txt{
+												font-size: 14px;
+											}
+											.right_txt{
+												font-size: 16px;
+											}
+										}
+									}
+									.line{
+										margin-bottom: 20px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.removeOrder {
+				.modal-dialog {
+					.modal-content {
+						.modal-body {
+							.inner_body {
+								.listing_card{
+									margin-bottom: 25px;
+								}
+								.btn_area{
+									margin-top: 25px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.modal {
+		.modal-dialog {
+		    width: 620px;
+			.modal-content {
+				.modal-header{
+					.btn-close{
+						&::before{
+							font-size: 18px;
+						    margin-top: 8px;
+						    margin-right: 12px;
+						}
+					}
+				}
+				.modal-body {
+					.inner_body{
+						padding: 20px;
+						.left_area{
+							width: 275px;
+							.img_modal{
+								height: 296px;
+							}
+						}
+						.right_area{
+							width: calc(100% - 275px);
+							padding-left: 20px;
+							h3{
+								font-size: 22px;
+								margin-bottom: 12px;
+							}
+							.price{
+								font-size: 25px;
+								margin-bottom: 15px;
+							}
+							.size_main {
+								margin-bottom: 25px;
+								.size{
+									font-size: 18px;
+									margin-bottom: 12px;
+									span{
+										font-size: 16px;
+									}
+								}
+								.size_list{
+									li{
+										height: 32px;
+									    width: 40px;
+									    font-size: 14px;
+									    margin-right: 8px;
+									}
+								}
+							}
+							.bottom_area {
+								.quantity_main {
+									.text{
+										font-size: 18px;
+										margin-bottom: 12px;
+									}
+									.qut_box{
+										.txt{
+											height: 32px;
+											width: 32px;
+										}
+									}
+								}
+								.btn_card {
+									.btn-primary{
+										font-size: 14px;
+									    min-width: 150px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.planModal {
+			.modal-dialog {
+				width: 420px;
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							padding: 20px;
+							padding-top: 0;
+							.id_txt{
+								font-size: 18px;
+								margin-bottom: 12px;
+							}
+							.txt{
+								margin-bottom: 12px;
+							}
+							.card_box{
+								padding: 20px;
+								margin-bottom: 20px;
+								.basic_main {
+									margin-bottom: 15px;
+									.left_bs {
+										.txt_p{
+											font-size: 14px;
+										}
+										.txt_bs{
+											font-size: 22px;
+										}
+									}
+									.right_bs{
+										.tag{
+											font-size: 14px;
+											min-width: 112px;
+										}
+									}
+								}
+								.bottom_area {
+									.price{
+										font-size: 32px;
+									}
+									.expire_txt{
+										font-size: 14px;
+									}
+								}
+							}
+							.payment_detail{
+								padding: 20px;
+								h3{
+									font-size: 18px;
+									margin-bottom: 20px;
+								}
+								.inner_detail{
+									.price_total{
+										margin-bottom: 15px;
+										&.total{
+											.left_txt{
+												font-size: 14px;
+											}
+											.right_txt{
+												font-size: 16px;
+											}
+										}
+									}
+									.line{
+										margin-bottom: 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.removeOrder {
+				.modal-dialog {
+					.modal-content {
+						.modal-body {
+							.inner_body {
+								.listing_card{
+									margin-bottom: 20px;
+									.inner_item{
+										padding: 15px;
+										.img_area{
+											height: 75px;
+											width: 75px;
+										}
+										.content{
+											padding-left: 15px;
+											.title{
+												font-size: 16px;
+											}
+											.prices{
+												font-size: 22px;
+											}
+										}
+									}
+								}
+								.btn_area{
+									margin-top: 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.modal {
+		.modal-dialog {
+		    width: auto;
+		    margin: 0 auto;
+	        margin-left: 15px;
+	        margin-right: 15px;
+			.modal-content {
+				.modal-header{
+					.btn-close{
+						&::before{
+							font-size: 18px;
+						    margin-top: 8px;
+						    margin-right: 12px;
+						}
+					}
+				}
+				.modal-body {
+					.inner_body{
+						padding: 20px;
+						.left_area{
+							width: 100%;
+							margin-bottom: 15px;
+							.img_modal{
+								height: 275px;
+							}
+						}
+						.right_area{
+							width: 100%;
+							padding-left: 0px;
+							h3{
+								font-size: 20px;
+								margin-bottom: 12px;
+							}
+							.price{
+								font-size: 22px;
+								margin-bottom: 15px;
+							}
+							.size_main {
+								margin-bottom: 25px;
+								.size{
+									font-size: 16px;
+									margin-bottom: 12px;
+									span{
+										font-size: 14px;
+									}
+								}
+								.size_list{
+									li{
+										height: 32px;
+									    width: 40px;
+									    font-size: 14px;
+									    margin-right: 8px;
+									}
+								}
+							}
+							.bottom_area {
+								.quantity_main {
+									.text{
+										font-size: 16px;
+										margin-bottom: 12px;
+									}
+									.qut_box{
+										.txt{
+											height: 32px;
+											width: 32px;
+										}
+									}
+								}
+								.btn_card {
+									.btn-primary{
+										font-size: 14px;
+									    min-width: 150px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.planModal {
+			.modal-dialog {
+				width: auto;
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							padding: 15px;
+							padding-top: 0;
+							.id_txt{
+								font-size: 16px;
+								margin-bottom: 12px;
+							}
+							.txt{
+								margin-bottom: 12px;
+							}
+							.card_box{
+								padding: 15px;
+								margin-bottom: 20px;
+								.basic_main {
+									margin-bottom: 15px;
+									.left_bs {
+										.txt_p{
+											font-size: 14px;
+										}
+										.txt_bs{
+											font-size: 20px;
+										}
+									}
+									.right_bs{
+										.tag{
+											font-size: 14px;
+											min-width: 112px;
+										}
+									}
+								}
+								.bottom_area {
+									.price{
+										font-size: 28px;
+									}
+									.expire_txt{
+										font-size: 14px;
+									}
+								}
+							}
+							.payment_detail{
+								padding: 15px;
+								h3{
+									font-size: 16px;
+									margin-bottom: 20px;
+								}
+								.inner_detail{
+									.price_total{
+										margin-bottom: 15px;
+										&.total{
+											.left_txt{
+												font-size: 14px;
+											}
+											.right_txt{
+												font-size: 16px;
+											}
+										}
+									}
+									.line{
+										margin-bottom: 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.removeOrder {
+				.modal-dialog {
+					.modal-content {
+						.modal-body {
+							.inner_body {
+								.listing_card{
+									margin-bottom: 20px;
+									.inner_item{
+										padding: 15px;
+										.img_area{
+											height: 65px;
+											width: 65px;
+										}
+										.content{
+											padding-left: 15px;
+											.title{
+												font-size: 16px;
+											}
+											.prices{
+												font-size: 20px;
+											}
+										}
+									}
+								}
+								.btn_area{
+									margin-top: 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.modal {
+		.modal-dialog {
+		    width: auto;
+		    margin: 0 auto;
+	        margin-left: 15px;
+	        margin-right: 15px;
+			.modal-content {
+				.modal-header{
+					.btn-close{
+						&::before{
+							font-size: 18px;
+						    margin-top: 8px;
+						    margin-right: 12px;
+						}
+					}
+				}
+				.modal-body {
+					.inner_body{
+						padding: 20px;
+						.left_area{
+							width: 100%;
+							margin-bottom: 15px;
+							.img_modal{
+								height: 275px;
+							}
+						}
+						.right_area{
+							width: 100%;
+							padding-left: 0px;
+							h3{
+								font-size: 20px;
+								margin-bottom: 12px;
+							}
+							.price{
+								font-size: 22px;
+								margin-bottom: 15px;
+							}
+							.size_main {
+								margin-bottom: 25px;
+								.size{
+									font-size: 16px;
+									margin-bottom: 12px;
+									span{
+										font-size: 14px;
+									}
+								}
+								.size_list{
+									li{
+										height: 32px;
+									    width: 40px;
+									    font-size: 14px;
+									    margin-right: 8px;
+									}
+								}
+							}
+							.bottom_area {
+								.quantity_main {
+									.text{
+										font-size: 16px;
+										margin-bottom: 12px;
+									}
+									.qut_box{
+										.txt{
+											height: 32px;
+											width: 32px;
+										}
+									}
+								}
+								.btn_card {
+									.btn-primary{
+										font-size: 14px;
+									    min-width: 150px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.planModal {
+			.modal-dialog {
+				width: auto;
+				.modal-content {
+					.modal-body {
+						.inner_body{
+							padding: 15px;
+							padding-top: 0;
+							.id_txt{
+								font-size: 16px;
+								margin-bottom: 12px;
+							}
+							.txt{
+								margin-bottom: 12px;
+							}
+							.card_box{
+								padding: 15px;
+								margin-bottom: 20px;
+								.basic_main {
+									margin-bottom: 15px;
+									.left_bs {
+										.txt_p{
+											font-size: 14px;
+										}
+										.txt_bs{
+											font-size: 20px;
+										}
+									}
+									.right_bs{
+										.tag{
+											font-size: 14px;
+											min-width: 112px;
+										}
+									}
+								}
+								.bottom_area {
+									.price{
+										font-size: 28px;
+									}
+									.expire_txt{
+										font-size: 14px;
+									}
+								}
+							}
+							.payment_detail{
+								padding: 15px;
+								h3{
+									font-size: 16px;
+									margin-bottom: 20px;
+								}
+								.inner_detail{
+									.price_total{
+										margin-bottom: 15px;
+										&.total{
+											.left_txt{
+												font-size: 14px;
+											}
+											.right_txt{
+												font-size: 16px;
+											}
+										}
+									}
+									.line{
+										margin-bottom: 15px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.removeOrder {
+				.modal-dialog {
+					.modal-content {
+						.modal-body {
+							.inner_body {
+								.listing_card{
+									margin-bottom: 20px;
+									.inner_item{
+										padding: 15px;
+										.img_area{
+											height: 65px;
+											width: 65px;
+										}
+										.content{
+											padding-left: 15px;
+											.title{
+												font-size: 16px;
+											}
+											.prices{
+												font-size: 20px;
+											}
+										}
+									}
+								}
+								.btn_area{
+									margin-top: 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}
+
+
+
+
+/* Add CSS styles for Portrait orientation */
+@media screen and (orientation: portrait) {
+    
+}
+
+/* Add CSS styles for Landscape orientation */
+@media screen and (orientation: landscape) {
+    
+}

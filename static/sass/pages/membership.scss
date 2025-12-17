@@ -1,0 +1,1060 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+
+.membership_section{
+	padding: 90px 0;
+	.inner_area{
+		.title_main{
+			.line_one{
+				height: 4px;
+				width: 50px;
+				background-color: variable.$primary_color;
+				margin-bottom: 12px;
+			}
+			.line_two{
+				height: 4px;
+				width: 120px;
+				background-color: variable.$primary_color;
+				margin-bottom: 20px;
+			}
+			.content{
+				margin-bottom: 60px;
+				h3{
+					font-size: 35px;
+					font-weight: 400;
+					color: variable.$white;
+					margin-bottom: 20px;
+				}
+				.txt{
+					font-size: 20px;
+					font-weight: 400;
+					color: variable.$white;
+					span{
+						font-weight: 500;
+					}
+				}
+			}
+		}
+		.plan_list{
+			.card_item{
+				background-color: variable.$secondary_color;
+				padding: 30px 20px;
+				@include mixins.transition(all .5s ease-in-out);
+				&:hover,&.active{
+					@include mixins.scale(1.02);
+					background-color: variable.$primary_color;
+					.desc_list{
+						li{
+							.icon{
+								background-color: variable.$white;
+								i{
+									color: variable.$primary_color;
+								}
+							}
+						}
+					}
+					.btn_area{
+						.btn-primary{
+							background-color: variable.$white;
+							color: variable.$primary_color;
+						}
+					}
+				}
+				.plan{
+					font-size: 16px;
+					font-weight: 400;
+					color: variable.$white;
+					margin-bottom: 5px;
+				}
+				.basic{
+					font-size: 26px;
+					font-weight: 500;
+					color: variable.$white;
+					margin-bottom: 20px;
+				}
+				.price_main{
+					font-size: 40px;
+					font-weight: 500;
+					color: variable.$white;
+					padding-bottom: 30px;
+					margin-bottom: 30px;
+					border-bottom: 1px solid variable.$white;
+					span{
+						font-size: 14px;
+						font-weight: 400;
+						&.dollar{
+							vertical-align: top;
+							position: relative;
+							top: 2px;
+						}
+					}
+				}
+				.desc_list{
+					margin-bottom: 60px;
+					li{
+						font-size: 14px;
+						font-weight: 400;
+						color: variable.$white;
+						display: flex;
+						margin-bottom: 15px;
+						&:last-child{
+							margin-bottom: 0;
+						}
+						.icon{
+							height: 20px;
+							width: 20px;
+							background-color: variable.$primary_color;
+							text-align: center;
+							align-content: center;
+							flex-shrink: 0;
+							margin-right: 10px;
+							@include mixins.transition(all .5s ease-in-out);
+							i{
+								font-size: 13px;
+								color: variable.$white;
+							}
+						}
+					}
+				}
+				.btn_area{
+					.btn-primary{
+						width: 100%;
+						@include mixins.transition(all .5s ease-in-out);
+					}
+				}
+			}
+		}
+	}
+	&.collection_section{
+		.inner_area{
+			.title_main{
+				.content{
+					h3{
+						margin-bottom: 0;
+					}
+				}
+			}
+			.collection_list{
+				.collection_item{
+					background-color: variable.$secondary_color;
+					margin-bottom: 25px;
+					.image_area{
+						.owl-carousel{
+							position: relative;
+							.item{
+								.img_area{
+									height: 314px;
+									background-color: variable.$white;
+									img{
+										height: 100%;
+										width: 100%;
+										object-fit: cover;
+									}
+								}
+							}
+							.owl-dots{
+								background: #F8F8F866;
+								padding:3px 4px;
+								display: inline-block;
+								align-content: center;
+								border-radius: 15px;
+								min-width: 38px;
+								text-align: center;
+								position: absolute;
+								top: 0;
+								right: 0;
+								margin-top: 10px;
+								margin-right: 12px;
+								.owl-dot{
+									height: 10px;
+									width: 10px;
+									border-radius: 50%;
+									background-color: variable.$white;
+									margin-right: 4px;
+									&:last-child{
+										margin-right: 0;
+									}
+									&.active{
+										height: 14px;
+										width: 14px;
+										background-color: variable.$primary_color;
+									    position: relative;
+	    								top: 2px;
+									}
+								}
+							}
+						}
+					}
+					.content_main{
+						@include mixins.clearfix();
+						padding: 20px;
+						display: flex;
+						align-items: center;
+						.left{
+							float: left;
+							width: calc(100% - 62px);
+							h4{
+								font-size: 18px;
+								font-weight: 400;
+								color: variable.$white;
+								margin-bottom: 8px;
+							}
+							.price{
+								font-size: 24px;
+								font-weight: 500;
+								color: variable.$white;
+							}
+						}
+						.right{
+							float: right;
+							width: 62px;
+							.arrow{
+								display: inline-block;
+								height: 62px;
+								width: 62px;
+								background-color: variable.$primary_color;
+								text-align: center;
+								align-content: center;
+								@include mixins.transition(all .5s ease-in-out);
+								i{
+									font-size: 22px;
+									color: variable.$white;
+									@include mixins.rotate(-40deg);
+									@include mixins.transition(all .5s ease-in-out);
+								}
+								&:hover,&.active{
+									i{
+										@include mixins.rotate(0deg);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.video_section{
+		.inner_area{
+			.title_main{
+				.content{
+					h3{
+						margin-bottom: 0;
+					}
+				}
+			}
+			.video_listing{
+				.inner_item{
+					background-color: variable.$secondary_color;
+					margin-bottom: 30px;
+					.img_area{
+						height: 230px;
+						position: relative;
+						&::before{
+							content: "";
+							height: 100%;
+							width: 100%;
+							background: #00000066;
+							position: absolute;
+							inset: 0;
+							opacity: 0;
+							@include mixins.transition(all .5s ease-in-out);
+						}
+						img{
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+						}
+						.icon_play{
+							position: absolute;
+							inset: 0;
+							text-align: center;
+							align-content: center;
+							opacity: 0;
+							@include mixins.transition(all .5s ease-in-out);
+							i{
+								font-size: 25px;
+								color: variable.$white;
+								@include mixins.transition(all .5s ease-in-out);
+							}
+						}
+						&:hover,&.active{
+							&::before{
+								opacity: 1;
+							}
+							.icon_play{
+								opacity: 1;
+							}
+						}
+					}
+					.contents{
+						padding: 20px;
+						.date{
+							font-size: 14px;
+							font-weight: 400;
+							color: variable.$white;
+							margin-bottom: 5px;
+						}
+						.title{
+							font-size: 18px;
+							font-weight: 400;
+							color: variable.$white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/* Above 1920 desktop */
+@media (min-width: 1920px){
+    
+}
+
+/* 1680 desktop */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* 1600 desktop */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Above 1400 and Below 1599 Desktop*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    .membership_section{
+    	padding: 70px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 40px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 95px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom: 50px;
+    				h3{
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 18px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    .membership_section{
+    	padding: 60px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 40px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 95px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom: 50px;
+    				h3{
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 18px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.membership_section{
+    	padding: 40px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 30px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 70px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom:40px;
+    				h3{
+    					font-size: 30px;
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 16px;
+    				}
+    			}
+    		}
+    		.plan_list {
+    			.row{
+    				margin-left: -7px;
+    				margin-right:-7px;
+    				[class*=col-]{
+    					padding-left: 8px;
+    					padding-right: 8px;
+    				}
+    			}
+    			.card_item{
+				    padding: 20px 15px;
+				    .plan{
+				    	font-size: 14px;
+				    }
+				    .basic{
+				    	font-size: 22px;
+				    	margin-bottom: 15px;
+				    }
+				    .price_main{
+				    	font-size: 35px;
+				    	margin-bottom: 20px;
+				    	padding-bottom: 20px;
+				    }
+				    .desc_list {
+				    	margin-bottom: 40px;
+				    	li {
+				    		.icon{
+				    			height: 18px;
+				    			width: 18px;
+				    			i{
+				    				font-size: 11px;
+				    			}
+				    		}
+				    	}
+				    }
+    			}
+    		}
+    	}
+    	&.collection_section {
+    		.inner_area {
+    			.collection_list {
+    				.collection_item {
+    					.image_area {
+    						.owl-carousel {
+    							.item {
+    								.img_area{
+    									height: 290px;
+    								}
+    							}
+    						}
+    					}
+    					.content_main{
+    						padding: 15px;
+    						.left {
+    							width: calc(100% - 50px);
+    							h4{
+    								font-size: 16px;
+    							}
+    							.price{
+    								font-size: 22px;
+    							}
+    						}
+    						.right {
+    							width: 50px;
+    							.arrow{
+    								height: 50px;
+    								width: 50px;
+    								i{
+    									font-size: 20px;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	&.video_section {
+    		.inner_area {
+    			.video_listing {
+    				.inner_item {
+    					.img_area{
+    						height: 214px;
+    					}
+    					.contents{
+    						padding: 15px;
+    						.title{
+    							font-size: 16px;
+    						}
+    					}
+    				}
+    			} 
+    		}
+    	}
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.membership_section{
+    	padding: 35px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 30px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 70px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom:40px;
+    				h3{
+    					font-size: 28px;
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 16px;
+    				}
+    			}
+    		}
+    		.plan_list {
+    			.row{
+    				margin-left: -7px;
+    				margin-right:-7px;
+    				[class*=col-]{
+    					padding-left: 8px;
+    					padding-right: 8px;
+    				}
+    			}
+    			.card_item{
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    .plan{
+				    	font-size: 14px;
+				    }
+				    .basic{
+				    	font-size: 22px;
+				    	margin-bottom: 15px;
+				    }
+				    .price_main{
+				    	font-size: 35px;
+				    	margin-bottom: 20px;
+				    	padding-bottom: 20px;
+				    }
+				    .desc_list {
+				    	margin-bottom: 40px;
+				    	li {
+				    		.icon{
+				    			height: 18px;
+				    			width: 18px;
+				    			i{
+				    				font-size: 11px;
+				    			}
+				    		}
+				    	}
+				    }
+    			}
+    		}
+    	}
+    	&.collection_section {
+    		.inner_area {
+    			.collection_list {
+    				.collection_item {
+    					.image_area {
+    						.owl-carousel {
+    							.item {
+    								.img_area{
+    									height: 325px;
+    								}
+    							}
+    						}
+    					}
+    					.content_main{
+    						padding: 15px;
+    						.left {
+    							width: calc(100% - 50px);
+    							h4{
+    								font-size: 16px;
+    							}
+    							.price{
+    								font-size: 22px;
+    							}
+    						}
+    						.right {
+    							width: 50px;
+    							.arrow{
+    								height: 50px;
+    								width: 50px;
+    								i{
+    									font-size: 20px;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	&.video_section {
+    		.inner_area {
+    			.video_listing {
+    				.row{
+    					margin-left: -7px;
+    					margin-right:-7px;
+    					[class*="col-"]{
+    						padding-left: 8px;
+    						padding-right: 8px;
+    					}
+    				}
+    				.inner_item {
+    					margin-bottom: 20px;
+    					.img_area{
+    						height: 162px;
+    					}
+    					.contents{
+    						padding: 15px;
+    						.title{
+    							font-size: 16px;
+    						}
+    					}
+    				}
+    			} 
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.membership_section{
+    	padding: 30px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 30px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 70px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom:30px;
+    				h3{
+    					font-size: 25px;
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 14px;
+    					line-height: 21px;
+    				}
+    			}
+    		}
+    		.plan_list {
+    			.row{
+    				margin-left: -7px;
+    				margin-right:-7px;
+    				[class*=col-]{
+    					padding-left: 8px;
+    					padding-right: 8px;
+    				}
+    			}
+    			.card_item{
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    .plan{
+				    	font-size: 14px;
+				    }
+				    .basic{
+				    	font-size: 22px;
+				    	margin-bottom: 15px;
+				    }
+				    .price_main{
+				    	font-size: 35px;
+				    	margin-bottom: 20px;
+				    	padding-bottom: 20px;
+				    }
+				    .desc_list {
+				    	margin-bottom: 30px;
+				    	li {
+				    		.icon{
+				    			height: 18px;
+				    			width: 18px;
+				    			i{
+				    				font-size: 11px;
+				    			}
+				    		}
+				    	}
+				    }
+    			}
+    		}
+    	}
+    	&.collection_section {
+    		.inner_area {
+    			.collection_list {
+    				.collection_item {
+    					.image_area {
+    						.owl-carousel {
+    							.item {
+    								.img_area{
+    									height: 278px;
+    								}
+    							}
+    						}
+    					}
+    					.content_main{
+    						padding: 15px;
+    						.left {
+    							width: calc(100% - 50px);
+    							h4{
+    								font-size: 16px;
+    							}
+    							.price{
+    								font-size: 22px;
+    							}
+    						}
+    						.right {
+    							width: 50px;
+    							.arrow{
+    								height: 50px;
+    								width: 50px;
+    								i{
+    									font-size: 20px;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	&.video_section {
+    		.inner_area {
+    			.video_listing {
+    				.row{
+    					margin-left: -7px;
+    					margin-right:-7px;
+    					[class*="col-"]{
+    						padding-left: 8px;
+    						padding-right: 8px;
+    					}
+    				}
+    				.inner_item {
+    					margin-bottom: 20px;
+    					.img_area{
+    						height: 212px;
+    					}
+    					.contents{
+    						padding: 15px;
+    						.title{
+    							font-size: 16px;
+    						}
+    					}
+    				}
+    			} 
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.membership_section{
+    	padding: 25px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 20px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 50px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom:30px;
+    				h3{
+    					font-size: 22px;
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 14px;
+    					line-height: 21px;
+    				}
+    			}
+    		}
+    		.plan_list {
+    			.row{
+    				margin-left: -7px;
+    				margin-right:-7px;
+    				[class*=col-]{
+    					padding-left: 8px;
+    					padding-right: 8px;
+    				}
+    			}
+    			.card_item{
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    .plan{
+				    	font-size: 14px;
+				    }
+				    .basic{
+				    	font-size: 22px;
+				    	margin-bottom: 15px;
+				    }
+				    .price_main{
+				    	font-size: 35px;
+				    	margin-bottom: 20px;
+				    	padding-bottom: 20px;
+				    }
+				    .desc_list {
+				    	margin-bottom: 30px;
+				    	li {
+				    		.icon{
+				    			height: 18px;
+				    			width: 18px;
+				    			i{
+				    				font-size: 11px;
+				    			}
+				    		}
+				    	}
+				    }
+    			}
+    		}
+    	}
+    	&.collection_section {
+    		.inner_area {
+    			.collection_list {
+    				.collection_item {
+    					margin-bottom: 20px;
+    					.image_area {
+    						.owl-carousel {
+    							.item {
+    								.img_area{
+    									height: 315px;
+    								}
+    							}
+    						}
+    					}
+    					.content_main{
+    						padding: 15px;
+    						.left {
+    							width: calc(100% - 50px);
+    							h4{
+    								font-size: 16px;
+    							}
+    							.price{
+    								font-size: 22px;
+    							}
+    						}
+    						.right {
+    							width: 50px;
+    							.arrow{
+    								height: 50px;
+    								width: 50px;
+    								i{
+    									font-size: 20px;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	&.video_section {
+    		.inner_area {
+    			.video_listing {
+    				.inner_item {
+    					margin-bottom: 20px;
+    					.img_area{
+    						height: 230px;
+    					}
+    					.contents{
+    						padding: 15px;
+    						.title{
+    							font-size: 16px;
+    						}
+    					}
+    				}
+    			} 
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.membership_section{
+    	padding: 25px 0;
+    	.inner_area {
+    		.title_main {
+    			.line_one{
+    				height: 3px;
+    				width: 20px;
+    				margin-bottom: 10px;
+    			}
+    			.line_two{
+				    height: 3px;
+				    width: 50px;
+				    margin-bottom: 15px;
+    			}
+    			.content{
+    				margin-bottom:30px;
+    				h3{
+    					font-size: 22px;
+    					margin-bottom: 15px;
+    				}
+    				.txt{
+    					font-size: 14px;
+    					line-height: 21px;
+    				}
+    			}
+    		}
+    		.plan_list {
+    			.row{
+    				margin-left: -7px;
+    				margin-right:-7px;
+    				[class*=col-]{
+    					padding-left: 8px;
+    					padding-right: 8px;
+    				}
+    			}
+    			.card_item{
+				    padding: 20px;
+				    margin-bottom: 20px;
+				    .plan{
+				    	font-size: 14px;
+				    }
+				    .basic{
+				    	font-size: 22px;
+				    	margin-bottom: 15px;
+				    }
+				    .price_main{
+				    	font-size: 35px;
+				    	margin-bottom: 20px;
+				    	padding-bottom: 20px;
+				    }
+				    .desc_list {
+				    	margin-bottom: 30px;
+				    	li {
+				    		.icon{
+				    			height: 18px;
+				    			width: 18px;
+				    			i{
+				    				font-size: 11px;
+				    			}
+				    		}
+				    	}
+				    }
+    			}
+    		}
+    	}
+    	&.collection_section {
+    		.inner_area {
+    			.collection_list {
+    				.collection_item {
+    					margin-bottom: 20px;
+    					.image_area {
+    						.owl-carousel {
+    							.item {
+    								.img_area{
+    									height: 315px;
+    								}
+    							}
+    						}
+    					}
+    					.content_main{
+    						padding: 15px;
+    						.left {
+    							width: calc(100% - 50px);
+    							h4{
+    								font-size: 16px;
+    							}
+    							.price{
+    								font-size: 22px;
+    							}
+    						}
+    						.right {
+    							width: 50px;
+    							.arrow{
+    								height: 50px;
+    								width: 50px;
+    								i{
+    									font-size: 20px;
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	&.video_section {
+    		.inner_area {
+    			.video_listing {
+    				.inner_item {
+    					margin-bottom: 20px;
+    					.img_area{
+    						height: 230px;
+    					}
+    					.contents{
+    						padding: 15px;
+    						.title{
+    							font-size: 16px;
+    						}
+    					}
+    				}
+    			} 
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}
+
+
+
+
+/* Add CSS styles for Portrait orientation */
+@media screen and (orientation: portrait) {
+    
+}
+
+/* Add CSS styles for Landscape orientation */
+@media screen and (orientation: landscape) {
+    
+}

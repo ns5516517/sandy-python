@@ -1,0 +1,361 @@
+@use "../base/variable.scss";
+@use "../base/mixins.scss";
+
+.spacing_top{
+	padding-top: 90px;
+}
+
+.banner_section{
+	background-color: variable.$secondary_color;
+	height: 148px;
+	max-height: 100%;
+	padding: 20px 0;
+	.inner_banner{
+		position: relative;
+		z-index: 2;
+		.main_title{
+			display: flex;
+			position: relative;
+			z-index: 3;
+			h3{
+				font-size: 30px;
+				font-weight: 600;
+				color: variable.$white;
+				text-align: center;
+				flex-grow: 1;
+			}
+			.icon{
+				height: 40px;
+				width: 40px;
+				border-radius: 50%;
+				text-align: center;
+				align-content: center;
+				border:1px solid variable.$white;
+				margin-right: 15px;
+				@include mixins.transition(all .5s ease-in-out);
+				i{
+					font-size: 16px;
+					color: variable.$white;
+					@include mixins.transition(all .5s ease-in-out);
+				}
+				&:hover,&.active{
+					background-color: variable.$white;
+					i{
+						color: variable.$black;
+					}
+				}
+			}
+		}
+		.title_stroke{
+			font-size: 100px;
+			font-weight: 400;
+			color: transparent;
+			line-height: 100px;
+			 -webkit-text-stroke-width: 1px;
+  			-webkit-text-stroke-color: variable.$primary_color;
+  			position: absolute;
+  			inset:0;
+  			text-align: center;
+    		align-content: center;
+    		opacity: 0.4;
+    		z-index: 1;
+		}
+	}
+}
+
+.menu_section{
+	padding-bottom: 30px;
+	.inner_area{
+		.menu_list{
+			display: flex;
+			overflow: auto;
+			padding-bottom: 5px;
+			&::-webkit-scrollbar-track
+                {
+                    border-radius: 10px;
+                }
+
+                &::-webkit-scrollbar
+                {
+                    height: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb
+                {
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                    background-color: variable.$primary_color;
+                }
+			li{
+				display: inline-block;
+				margin-right: 12px;
+				@include mixins.transition(all .5s ease-in-out);
+				&:last-child{
+					margin-right: 0;
+				}
+				.txt{
+					padding: 15px 20px;
+					font-size: 14px;
+					font-weight: 400;
+					color: variable.$white;
+					background-color: variable.$secondary_color;
+					border-radius: 8px;
+					display: inline-block;
+					min-width: 130px;
+					text-align: center;
+					@include mixins.transition(all .5s ease-in-out);
+				}
+				&:hover,&.active{
+					.txt{
+						background-color: variable.$primary_color;
+						color: variable.$white;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Extra Huge large desktops */
+@media (min-width: 1920px){
+    
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1680px) and (max-width: 1919px){
+    
+}
+
+/* Extra Huge large desktops */
+@media (min-width: 1600px) and (max-width: 1679px){
+    
+}
+
+/* Extra large desktops and mac laptops*/
+@media (min-width: 1400px) and (max-width: 1599px){
+    
+}
+
+@media (min-width: 1300px) and (max-width: 1399px){
+    .spacing_top{
+    	padding-top: 70px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1299px){
+    .spacing_top{
+    	padding-top: 60px;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.spacing_top{
+    	padding-top: 40px;
+    }
+
+    .banner_section {
+    	height: 120px;
+    	.inner_banner {
+    		.main_title {
+    			h3{
+    				font-size: 28px;
+    			}
+    			.icon{
+    				height: 35px;
+    				width: 35px;
+    			}
+    		}
+    		.title_stroke{
+    			font-size: 75px;
+    			line-height: 75px;
+    		}
+    	}
+    }
+
+    .menu_section {
+    	.inner_area{
+    		.menu_list {
+    			li{
+    				.txt{
+    					padding: 12px 20px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape tablets and ipad */
+@media (min-width: 768px) and (max-width: 991px) {
+	.spacing_top{
+    	padding-top: 35px;
+    }
+    .banner_section {
+    	height: 120px;
+    	.inner_banner {
+    		.main_title {
+    			h3{
+    				font-size: 26px;
+    			}
+    			.icon{
+    				height: 35px;
+    				width: 35px;
+    			}
+    		}
+    		.title_stroke{
+    			font-size: 75px;
+    			line-height: 75px;
+    		}
+    	}
+    }
+
+    .menu_section {
+    	padding-bottom: 25px;
+    	.inner_area{
+    		.menu_list {
+    			li{
+    				.txt{
+    					padding: 12px 20px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 576px) and (max-width: 767px) {
+	.spacing_top{
+    	padding-top: 30px;
+    }
+    .banner_section {
+    	height: 104px;
+    	.inner_banner {
+    		.main_title {
+    			h3{
+    				font-size: 25px;
+    			}
+    			.icon{
+    				height: 30px;
+    				width: 30px;
+    				i{
+    					font-size: 14px;
+    				}
+    			}
+    		}
+    		.title_stroke{
+    			font-size: 60px;
+    			line-height: 60px;
+    		}
+    	}
+    }
+
+    .menu_section {
+    	padding-bottom: 25px;
+    	.inner_area{
+    		.menu_list {
+    			li{
+    				.txt{
+    					padding: 12px 20px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 361px) and (max-width: 575px) {
+	.spacing_top{
+    	padding-top: 25px;
+    }
+    .banner_section {
+    	padding: 15px 0;
+    	height: 80px;
+    	.inner_banner {
+    		.main_title {
+    			h3{
+    				font-size: 20px;
+    			}
+    			.icon{
+    				height: 30px;
+    				width: 30px;
+    				i{
+    					font-size: 14px;
+    				}
+    			}
+    		}
+    		.title_stroke{
+    			font-size: 45px;
+    			line-height: 45px;
+    		}
+    	}
+    }
+
+    .menu_section {
+    	padding-bottom: 25px;
+    	.inner_area{
+    		.menu_list {
+    			li{
+    				margin-right: 8px;
+    				.txt{
+    					padding: 12px 20px;
+    					min-width: 100px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 360px) {
+	.spacing_top{
+    	padding-top: 25px;
+    }
+    .banner_section {
+    	padding: 15px 0;
+    	height: 80px;
+    	.inner_banner {
+    		.main_title {
+    			h3{
+    				font-size: 20px;
+    			}
+    			.icon{
+    				height: 30px;
+    				width: 30px;
+    				i{
+    					font-size: 14px;
+    				}
+    			}
+    		}
+    		.title_stroke{
+    			font-size: 45px;
+    			line-height: 45px;
+    		}
+    	}
+    }
+
+    .menu_section {
+    	padding-bottom: 25px;
+    	.inner_area{
+    		.menu_list {
+    			li{
+    				margin-right: 8px;
+    				.txt{
+    					padding: 12px 20px;
+    					min-width: 100px;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+/* Smaller phones */
+@media (max-width: 320px) {
+    
+}
